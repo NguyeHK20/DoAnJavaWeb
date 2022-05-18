@@ -8,7 +8,6 @@
 	<script th:src="@{/star-rating/themes/krajee-svg/theme.js}"></script>
 </head>
 <body>
-<div class="container-fluid">
 	<div th:replace="navigation :: header_menu"></div>
 	<div th:replace="navigation :: search_nav"></div>
 	<div th:replace="breadcrumb :: content"></div>
@@ -103,7 +102,9 @@
 	<div th:replace="product/images_carousel :: content"></div>
 	<div th:replace="fragments :: modal_dialog"></div>	
 	<div th:replace="navigation :: footer_menu"></div>
-</div>	
+	
+	<div th:replace="navigation :: jquery_plugins"></div>
+
 <script type="text/javascript">
 	contextPath = "[[@{/}]]";
 	productId = "[[${product.id}]]";

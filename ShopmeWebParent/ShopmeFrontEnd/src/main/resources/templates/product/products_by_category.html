@@ -8,7 +8,6 @@
 	<script th:src="@{/star-rating/themes/krajee-svg/theme.js}"></script>
 </head>
 <body>
-<div class="container-fluid">
 	<div th:replace="navigation :: header_menu"></div>
 	<div th:replace="navigation :: search_nav"></div>
 	<div th:replace="breadcrumb :: content"></div>
@@ -35,7 +34,6 @@
 	<div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"></div>
 	
 	<div th:replace="navigation :: footer_menu"></div>
-</div>	
 <script type="text/javascript">	
 	$(".product-detail-rating-star").rating({
 		displayOnly: true,
