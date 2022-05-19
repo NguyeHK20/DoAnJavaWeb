@@ -10,19 +10,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.shopme.brand.BrandService;
 import com.shopme.category.CategoryService;
+import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 
 @Controller
 public class MainController {
 
 	@Autowired private CategoryService categoryService;
+	@Autowired private BrandService brandService;
 	
 	@GetMapping("")
 	public String viewHomePage(Model model) {
 		List<Category> listCategories = categoryService.listNoChildrenCategories();
+		List<Brand> listBrands = brandService.listAll();
 		model.addAttribute("listCategories", listCategories);
-		
+		model.addAttribute("listBrands", listBrands);
+		System.out.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+listBrands.get(0).getLogoPath());
 		return "index";
 	}
 	

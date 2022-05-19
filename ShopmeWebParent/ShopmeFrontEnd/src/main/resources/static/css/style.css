@@ -292,7 +292,7 @@ textarea.input {
 \*----------------------------*/
 
 .section {
-  padding-top: 30px;
+  padding-top: 90px;
   padding-bottom: 30px;
 }
 
@@ -420,7 +420,7 @@ textarea.input {
 .header-links li {
   display: inline-block;
   margin-right: 15px;
-  font-size: 12px;
+  font-size: 0.85rem;
 }
 
 .header-links li:last-child {
@@ -448,6 +448,7 @@ textarea.input {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #15161D;
+	border-bottom: 3px solid #D10024;
 }
 
 .header-logo {
@@ -478,7 +479,7 @@ textarea.input {
 }
 
 .header-search form .input {
-  width: calc(100% - 260px);
+  width: calc(100% - 120px);
   margin-right: -4px;
 }
 
@@ -623,10 +624,15 @@ textarea.input {
 	03 -> Navigation
 ===========================================================*/
 
-#navigation {
+
+.navbar .navbar-collapse {
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
   background: #FFF;
   border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid #D10024;
 }
 
 /*----------------------------*\
@@ -638,7 +644,7 @@ textarea.input {
 }
 
 .main-nav>li>a {
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 
 .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
@@ -790,10 +796,9 @@ textarea.input {
 ===========================================================*/
 
 #hot-deal.section {
-  padding: 60px 0px;
-  margin: 30px 0px;
+ margin-top: 1px;
   background-color: #E4E7ED;
-  background-image: url('../img/hotdeal.png');
+  background-image: url('../images/hotdeal.png');
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -858,11 +863,12 @@ textarea.input {
 
 .product {
   position: relative;
-  margin: 15px 0px;
+  margin: 15px 10px;
   -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  weight: 50px;
 }
 
 .product:hover {
@@ -874,9 +880,6 @@ textarea.input {
   position: relative;
 }
 
-.product .product-img>img {
-  width: 100%;
-}
 
 .product .product-img .product-label {
   position: absolute;
@@ -2196,4 +2199,34 @@ textarea.input {
     float: none;
     margin-top: 10px;
   }
+}
+
+/* --------- */
+.content-policy{
+	text-align:center;
+    border: 2px solid #ddd;
+	border-radius: 5px;
+}
+
+.content-policy:hover{
+    border: 2px solid #D10024;
+    color: #D10024;
+}
+
+.content-policy > h2{
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+.content-policy:hover h2, .content-policy:hover p {
+    color: #D10024;
+}
+
+.content-policy > .icon {
+	margin: 16px;
+}
+
+.content-policy > p {
+	color: #777777;
+	font-size: 0.85rem;
 }
