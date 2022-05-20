@@ -27,7 +27,6 @@ public class MainController {
 		List<Brand> listBrands = brandService.listAll();
 		model.addAttribute("listCategories", listCategories);
 		model.addAttribute("listBrands", listBrands);
-		System.out.print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+listBrands.get(0).getLogoPath());
 		return "index";
 	}
 	

@@ -292,7 +292,7 @@ textarea.input {
 \*----------------------------*/
 
 .section {
-  padding-top: 90px;
+  padding-top: 64px;
   padding-bottom: 30px;
 }
 
@@ -1234,7 +1234,7 @@ textarea.input {
 }
 
 .checkbox-filter .input-radio label, .checkbox-filter .input-checkbox label {
-  font-size: 12px;
+  font-size: 0.85rem;
 }
 
 .checkbox-filter .input-radio label small, .checkbox-filter .input-checkbox label small {
@@ -2229,4 +2229,12 @@ textarea.input {
 .content-policy > p {
 	color: #777777;
 	font-size: 0.85rem;
+}
+
+
+.banner-img {
+	left: -14px;
+    top: 1px;
+    position: relative;
+   
 }

@@ -12,35 +12,53 @@
 	<div th:replace="navigation :: menu_customer"></div>
 	<div th:replace="breadcrumb :: content"></div>
 	
-	<div class="row text-center">
-		<th:block th:each="cat : ${category.children}">
-		<div class="col" th:if="${cat.enabled == true}">
-		<a th:href="@{'/c/' + ${cat.alias}}">
-			<img th:src="@{${cat.imagePath}}" height="100" />
-			<br/>
-			<b>[[${cat.name}]]</b>
-		</a>
+	<!-- SECTION PRICE RANGE-->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				
+				<head th:replace="fragments :: price_range" />
+				<!-- CATEGORIES -->
+				
+				<div id="category" class="col-md-9">
+					<th:block th:unless="${#lists.isEmpty(category.children)}">					
+						<h3>Categories</h3>
+						<div class="row text-center">
+							<th:block th:each="cat : ${category.children}">
+							<div class="col" th:if="${cat.enabled == true}">
+							<a th:href="@{'/c/' + ${cat.alias}}">
+								<img th:src="@{${cat.imagePath}}" height="100" />
+								<br/>
+								<b>[[${cat.name}]]</b>
+							</a>
+							</div>
+							</th:block>
+						</div>		
+					</th:block>		
+					<div class="row">&nbsp;</div>
+					<h3>Products</h3>
+					<div class="row">
+						<th:block th:each="product : ${listProducts}">
+						<div th:replace="product/product_fragment :: content"></div>
+						</th:block>
+					</div>
+					
+					<div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"></div>
+				</div>							
+			</div>
 		</div>
-		</th:block>
 	</div>
-	
-	<div class="row">&nbsp;</div>
-	<div class="row">
-		<th:block th:each="product : ${listProducts}">
-		<div th:replace="product/product_fragment :: content"></div>
-		</th:block>
-	</div>
-	
-	<div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"></div>
 	
 	<div th:replace="navigation :: footer_menu"></div>
-<script type="text/javascript">	
-	$(".product-detail-rating-star").rating({
-		displayOnly: true,
-		hoverOnClera: false,
-		showCaption: false,
-		theme: 'krajee-svg'
-	});
-</script>
+	<script type="text/javascript">	
+		$(".product-detail-rating-star").rating({
+			displayOnly: true,
+			hoverOnClera: false,
+			showCaption: false,
+			theme: 'krajee-svg'
+		});
+	</script>
 </body>
 </html>

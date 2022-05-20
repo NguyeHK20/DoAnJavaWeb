@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="content" th:remove="tag">
-	<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
+	<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">		
 		<div class="row">
 			<div class="col">
-				<nav>
-					<ol class="breadcrumb">
+				<nav class="">
+					<ol class="breadcrumb container">
 						<li class="breadcrumb-item">
 							<a th:href="@{/}">Home</a>
 						</li>
@@ -23,7 +23,7 @@
 						
 					</ol>
 				</nav>
-			</div>
+			</div>			
 		</div>
 	</div>
 </div>
