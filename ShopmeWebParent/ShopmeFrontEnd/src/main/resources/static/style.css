@@ -2,6 +2,22 @@
 *.icon-silver {color: silver}
 *.icon-green {color: green}
 *.icon-dark {color: gray}
+:root {
+  --main-bg-color: #D10024;
+}
+
+.page-link {
+	color: var(--main-bg-color);
+}
+
+.page-link:hover {
+	color: var(--main-bg-color);
+}
+
+.page-item.active .page-link {
+	background-color: var(--main-bg-color);
+	border-color: var(--main-bg-color);
+}
 
 @media screen and (max-width: 768px) {
 	/* small screen */

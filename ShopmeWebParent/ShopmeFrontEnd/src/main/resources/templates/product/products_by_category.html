@@ -12,17 +12,17 @@
 	<div th:replace="navigation :: menu_customer"></div>
 	<div th:replace="breadcrumb :: content"></div>
 	
-	<!-- SECTION PRICE RANGE-->
 	<div class="section">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
 			<div class="row">
 				
-				<head th:replace="fragments :: price_range" />
+				<!-- <head th:replace="fragments :: price_range" /> -->
+				
 				<!-- CATEGORIES -->
 				
-				<div id="category" class="col-md-9">
+				<div id="category" class="col-md-12">
 					<th:block th:unless="${#lists.isEmpty(category.children)}">					
 						<h3>Categories</h3>
 						<div class="row text-center">

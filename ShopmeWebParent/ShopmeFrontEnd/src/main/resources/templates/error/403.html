@@ -3,10 +3,16 @@
 <head th:replace="fragments :: page_head('Error - Shopme', 'none')" />
 </head>
 <body>
-<div class="container-fluid">
+<div >
 	<div th:replace="navigation :: header_menu"></div>
-	<div class="m-3">
-		<h2>Sorry, you don't have permission to access this page</h2>		
+	
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<div class="m-3">
+				<h2>Sorry, you don't have permission to access this page</h2>		
+			</div>
+		</div>
 	</div>
 
 	<div th:replace="navigation :: footer_menu"></div>

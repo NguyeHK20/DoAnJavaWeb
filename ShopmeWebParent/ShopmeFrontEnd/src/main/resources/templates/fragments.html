@@ -41,7 +41,7 @@
 	th:href="@{${moduleURL} + '/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${label}]]</a>
 		
 <div th:fragment="pagination(moduleURL, entityName)" th:remove="tag">
-	<div class="text-center m-1" th:if="${totalItems > 0}">
+	<div class="text-center bg-red m-1" th:if="${totalItems > 0}">
 		<span>Showing [[${entityName}]] # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
 	</div>
 	<div class="text-center m-1" th:unless="${totalItems > 0}">
@@ -131,10 +131,10 @@
 		<input type="hidden" name="sortField" th:value="${sortField}" />
 		<input type="hidden" name="sortDir" th:value="${sortDir}" />
 		
-		Filter:&nbsp;
+		Filter&nbsp;
 		<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
 		&nbsp;&nbsp;
-		<button type="submit" class="btn btn-primary">
+		<button type="submit" class="btn btn-danger">
 			<i class="fas fa-search"></i>
 		</button>
 		&nbsp;&nbsp;

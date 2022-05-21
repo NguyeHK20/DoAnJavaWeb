@@ -58,6 +58,7 @@ Table OF Contents
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  background-color: #FBFBFB;
   color: #333;
 }
 
@@ -107,6 +108,20 @@ ul, ol {
 .primary-btn:hover, .primary-btn:focus {
   opacity: 0.9;
   color: #FFF;
+}
+
+.btn-google {
+	background-color: #dd4b39;
+ 	color: white;
+}
+
+.btn-facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.btn-google:hover, .btn-facebook:hover  {
+ 	color: white;
 }
 
 /*----------------------------*\
@@ -292,8 +307,8 @@ textarea.input {
 \*----------------------------*/
 
 .section {
-  padding-top: 64px;
-  padding-bottom: 30px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .section-title {
