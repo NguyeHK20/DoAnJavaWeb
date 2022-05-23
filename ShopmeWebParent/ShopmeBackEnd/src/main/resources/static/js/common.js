@@ -3,6 +3,13 @@ $(document).ready(function() {
 		e.preventDefault();
 		document.logoutForm.submit();
 	});
+	console.log(moduleURL);
+	var nameTab = moduleURL.replace("/ShopmeAdmin/", "");
+	nameTab = nameTab.replace("_", "-");
+	console.log(nameTab);
+	var idNameTab = "#" + nameTab;
+	$(idNameTab).find('.nav-link').addClass("activeTab");
+	console.log($(idNameTab).find('.nav-link').addClass("activeTab"));
 	
 	customizeDropDownMenu();
 	customizeTabs();
@@ -35,3 +42,4 @@ function customizeTabs() {
 	    window.location.hash = e.target.hash;
 	})	
 }
+

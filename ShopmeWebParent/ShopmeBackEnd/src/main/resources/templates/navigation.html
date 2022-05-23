@@ -150,19 +150,7 @@
 		sec:authentication="principal.fullname"></a>	
 			<span class="text-danger" sec:authentication="principal.authorities"></span>
         </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div><div class="sidebar-search-results"><div class="list-group"><a href="#" class="list-group-item"><div class="search-title"><strong class="text-light"></strong>N<strong class="text-light"></strong>o<strong class="text-light"></strong> <strong class="text-light"></strong>e<strong class="text-light"></strong>l<strong class="text-light"></strong>e<strong class="text-light"></strong>m<strong class="text-light"></strong>e<strong class="text-light"></strong>n<strong class="text-light"></strong>t<strong class="text-light"></strong> <strong class="text-light"></strong>f<strong class="text-light"></strong>o<strong class="text-light"></strong>u<strong class="text-light"></strong>n<strong class="text-light"></strong>d<strong class="text-light"></strong>!<strong class="text-light"></strong></div><div class="search-path"></div></a></div></div>
-      </div>
+      </div>   
 
       <!-- Sidebar Menu -->
       
@@ -171,7 +159,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 			<th:block sec:authorize="hasAuthority('Admin')">
-				<li class="nav-item">
+				<li id="users" class="nav-item">
 					<a th:href="@{/users}" class="nav-link">
 						<i class="nav-icon fas fa-user"></i>
 					    <p>
@@ -183,7 +171,7 @@
           
           
 			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">								
-				<li class="nav-item">
+				<li id="categories" class="nav-item">
 					<a th:href="@{/categories}" class="nav-link">
 						<i class="nav-icon fas fa-copyright"></i>
 					    <p>
@@ -192,7 +180,7 @@
 				  	</a>
 				</li>
 				
-				<li class="nav-item">
+				<li id="brands" class="nav-item">
 					<a th:href="@{/brands}" class="nav-link">
 						<i class="nav-icon fas fa-bold"></i>
 					    <p>
@@ -204,7 +192,7 @@
           
           
           	<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Editor', 'Shipper')">								
-				<li class="nav-item">
+				<li id="products" class="nav-item">
 					<a th:href="@{/products}" class="nav-link">
 						<i class="nav-icon fab fa-product-hunt"></i>
 					    <p>
@@ -216,7 +204,7 @@
 			
 			
 			<th:block sec:authorize="hasAuthority('Assistant')">
-				<li class="nav-item">										
+				<li id="reviews" class="nav-item">										
 					<a th:href="@{/reviews}" class="nav-link">
 						<i class="nav-icon fas fa-comment-dots"></i>
 					    <p>
@@ -228,7 +216,7 @@
 			
 			
 			<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
-				<li class="nav-item">										
+				<li id="customers" class="nav-item">										
 					<a th:href="@{/customers}" class="nav-link">
 						<i class="nav-icon fas fa-users"></i>
 					    <p>
@@ -237,7 +225,7 @@
 				  	</a>
 				</li>
 				
-				<li class="nav-item">										
+				<li id="shipping-rates" class="nav-item">										
 					<a th:href="@{/shipping_rates}" class="nav-link">
 						<i class="nav-icon fas fa-shipping-fast"></i>
 					    <p>
@@ -248,7 +236,7 @@
 			</th:block>
 				
 			<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Shipper')">
-				<li class="nav-item">										
+				<li id="orders" class="nav-item">										
 					<a th:href="@{/orders}" class="nav-link">
 						<i class="nav-icon fas fa-shopping-cart"></i>
 					    <p>
@@ -259,7 +247,7 @@
 			</th:block>
 			
 			<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
-				<li class="nav-item">										
+				<li id="reports" class="nav-item">										
 					<a th:href="@{/reports}" class="nav-link">
 						<i class="nav-icon far fa-chart-bar"></i>
 					    <p>
@@ -270,7 +258,7 @@
 			</th:block>
 				
 		<!--	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-				<li class="nav-item">										
+				<li id="articles" class="nav-item">										
 					<a th:href="@{/articles}" class="nav-link">
 						<i class="nav-icon fas fa-book"></i>
 					    <p>
@@ -279,7 +267,7 @@
 				  	</a>
 				</li>	
 				
-				<li class="nav-item">										
+				<li id="menus" class="nav-item">										
 					<a th:href="@{/menus}" class="nav-link">
 						<i class="nav-icon fas fa-bars"></i>
 					    <p>
@@ -290,7 +278,7 @@
 			</th:block> -->
 	
 			<th:block sec:authorize="hasAnyAuthority('Admin')">
-				<li class="nav-item">										
+				<li id="settings" class="nav-item">										
 					<a th:href="@{/settings}" class="nav-link">
 						<i class="nav-icon fas fa-cog"></i>
 					    <p>
@@ -318,5 +306,6 @@
   </aside>
 	
 </div>
+
 </body>
 </html>

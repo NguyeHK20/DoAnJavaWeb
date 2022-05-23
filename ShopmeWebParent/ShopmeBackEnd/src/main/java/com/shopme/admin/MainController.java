@@ -2,19 +2,28 @@ package com.shopme.admin;
 
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.shopme.admin.security.ShopmeUserDetails;
 
 
 @Controller
 public class MainController {
 
 	@GetMapping("")
-	public String viewHomePage(Model model) {		 
+	public String viewHomePage(Model model, @AuthenticationPrincipal ShopmeUserDetails loggedUser) {	
 		
-		return "index";
+		if(loggedUser.hasRole("Admin") || loggedUser.hasRole("Salesperson")) {
+			return "redirect:/reports";
+		} else if(loggedUser.hasRole("Assistant")) {
+			return "redirect:/reviews";
+		} else {
+			return "redirect:/products";
+		}		
 	}
 	
 	@GetMapping("/login")
@@ -26,4 +35,5 @@ public class MainController {
 		
 		return "redirect:/";
 	}
+	
 }

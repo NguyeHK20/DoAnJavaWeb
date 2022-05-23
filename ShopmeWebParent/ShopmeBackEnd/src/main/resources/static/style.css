@@ -22,5 +22,8 @@
 	.hideable-column { display: table-cell; }
 }
 
-
+.nav-item>.nav-link.activeTab{
+  background-color: #3f474e;
+  color:white; 
+}
 
