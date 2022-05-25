@@ -256,6 +256,16 @@
 				  	</a>
 				</li>								
 			</th:block>
+			
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Assistant')">
+				<li id="articles" class="nav-item">										
+					<a th:href="@{/reviews}" class="nav-link">
+						<i class="nav-icon fas fa-comments"></i>
+					    <p>
+					   	Reviews         
+					    </p>
+				  	</a>
+				</li>
 				
 		<!--	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 				<li id="articles" class="nav-item">										

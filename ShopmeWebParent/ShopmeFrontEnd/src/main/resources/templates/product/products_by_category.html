@@ -29,7 +29,7 @@
 							<th:block th:each="cat : ${category.children}">
 							<div class="col" th:if="${cat.enabled == true}">
 							<a th:href="@{'/c/' + ${cat.alias}}">
-								<img th:src="@{${cat.imagePath}}" height="100" />
+								<img th:src="@{${cat.imagePath}}" height="120" />
 								<br/>
 								<b>[[${cat.name}]]</b>
 							</a>
