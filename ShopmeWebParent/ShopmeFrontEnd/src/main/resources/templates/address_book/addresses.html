@@ -11,10 +11,10 @@
 		<div class="container">
 	
 			<div class="text-center">
-				<div><h2 th:text="${redirectedFromCheckoutPage} ? 'Choose a Shipping Address' : 'Your Address Book'"></h2></div>
+				<div><h2 th:text="${redirectedFromCheckoutPage} ? 'Choose a Shipping Address' : 'Địa chỉ của bạn'"></h2></div>
 				<div>
-					<a th:unless="${param.redirect}" th:href="@{/address_book/new}" class="h4">Add New Address</a>
-					<a th:if="${redirectedFromCheckoutPage}" th:href="@{/address_book/new(redirect=checkout)}" class="h4">Add New Address</a>
+					<a th:unless="${param.redirect}" th:href="@{/address_book/new}" class="h4">Thêm địa chỉ mới</a>
+					<a th:if="${redirectedFromCheckoutPage}" th:href="@{/address_book/new(redirect=checkout)}" class="h4">Thêm địa chỉ mới</a>
 				</div>
 			</div>
 			
@@ -28,16 +28,16 @@
 						<div class="card-header">
 							<div class="row">
 								<div class="col-sm-10">
-									<b>Your Primary Address</b>
+									<b>Địa chỉ của bạn</b>
 									
 									<th:block th:if="${usePrimaryAddressAsDefault}">
 									<span class="text-danger" th:text="${redirectedFromCheckoutPage ? '[Currently Selected]' : '[Default]'}"></span>
 									</th:block>
 									
 									<th:block th:unless="${usePrimaryAddressAsDefault}">
-									<a th:unless="${param.redirect}" th:href="@{'/address_book/default/0'}">[Set as default]</a>
-									<a th:if="${param.redirect != null && param.redirect[0] == 'cart'}" th:href="@{'/address_book/default/0?redirect=cart'}">[Set as default]</a>
-									<a th:if="${redirectedFromCheckoutPage}" th:href="@{'/address_book/default/0?redirect=checkout'}">[Choose]</a>
+									<a th:unless="${param.redirect}" th:href="@{'/address_book/default/0'}">[Mặc định]</a>
+									<a th:if="${param.redirect != null && param.redirect[0] == 'cart'}" th:href="@{'/address_book/default/0?redirect=cart'}">[Mặc định]</a>
+									<a th:if="${redirectedFromCheckoutPage}" th:href="@{'/address_book/default/0?redirect=checkout'}">[Chọn]</a>
 									</th:block>							
 								</div>
 								<div class="col-sm-2">
@@ -63,7 +63,7 @@
 						<div class="card-header">
 							<div class="row">
 								<div class="col">
-									<b>Address #[[${status.count + 1}]]</b>
+									<b>Địa chỉ #[[${status.count + 1}]]</b>
 									
 									<th:block th:if="${address.defaultForShipping}">
 									<span class="text-danger" th:text="${redirectedFromCheckoutPage ? '[Currently Selected]' : '[Default]'}"></span>

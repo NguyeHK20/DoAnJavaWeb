@@ -9,18 +9,18 @@
 		<div id="top-header">
 			<div class="container">
 				<ul class="header-links float-left">
-					<li><a href="#"><i class="fa fa-phone"></i> 0965920340</a></li>
-					<li><a href="#"><i class="fa fa-envelope"></i> shopme.company2022@gmail.com</a></li>						
+					<li><a href="#"><i class="fa fa-phone"></i> 0359152710</a></li>
+					<li><a href="#"><i class="fa fa-envelope"></i> atech.company2024@gmail.com</a></li>
 					<li><a href="#"><i class="fa fa-map-marker"></i> 484, Le Van Viet, Q9, Tp HCM, Viet Nam</a></li>
 				</ul>
 				<ul class="header-links float-right">
 					<th:block sec:authorize="!isAuthenticated()">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/login}">Login</a>
+						<a class="nav-link" th:href="@{/login}">Đăng nhập</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/register}">Register</a>
+						<a class="nav-link" th:href="@{/register}">Đăng ký</a>
 					</li>
 					</th:block>
 					
@@ -30,10 +30,10 @@
 									sec:authentication="principal.fullName"></a></b>
 						</li>
 						
-						<li><a href="javascript:$('#logoutForm').submit()">Logout</a></li>
+						<li><a href="javascript:$('#logoutForm').submit()">Đăng xuất</a></li>
 				
 						<form id="logoutForm" th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
-							<input type="submit" value="Logout" />
+							<input type="submit" value="Đăng xuất" />
 						</form>
 
 					</th:block>
@@ -64,8 +64,8 @@
 							<form th:action="@{/search}" method="get">
 								<input type="search" name="keyword" class="input"
 									th:value="${searchKeyword}" 
-									placeholder="Search product" required />
-								<input type="submit" value="Search" class="search-btn" />
+									placeholder="Tìm kiếm sản phẩm" required />
+								<input type="submit" value="Tìm kiếm" class="search-btn" />
 							</form>	
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 							<div class="cart">
 								<a th:href="@{/cart}">
 								<i class="fas fa-shopping-cart"></i>
-								Your Cart</a>
+								Giỏ hàng của bạn</a>
 							<!-- 	<div class="qty">3</div>  -->
 							</div>
 							<!-- /Cart -->
@@ -106,19 +106,19 @@
 				
 				<ul class="main-nav nav navbar-nav">											
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/}">Home</a>
+						<a class="nav-link" th:href="@{/}">Trang chủ</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/address_book}">Address Book</a>
+						<a class="nav-link" th:href="@{/address_book}">Danh sách địa chỉ</a>
 					</li>
 															
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/reviews}">Reviews</a>
+						<a class="nav-link" th:href="@{/reviews}">Đánh giá</a>
 					</li>
 																				
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/orders}">Orders</a>
+						<a class="nav-link" th:href="@{/orders}">Đơn hàng của bạn</a>
 					</li>									
 									
 					</th:block>						
@@ -140,25 +140,25 @@
 				<div class="row">
 					<div class="col-md-4 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">About Us</h3>
-							<p>We specialize in selling electronics such as laptops, phones, headphones, cameras,...</p>
+							<h3 class="footer-title">Về chúng tôi</h3>
+							<p>Chúng tôi chuyên bán các thiết bị điện tử như laptop, điện thoại, tai nghe, máy ảnh,...</p>
 							<ul class="footer-links">
 								<li><a href="#"><i class="fa fa-map-marker"></i>484, Le Van Viet, Tp HCM, Viet Nam</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>+0965920340</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i>shopme.company2022@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+0359152710</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i>atech.company2024@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="col-md-2 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">Categories</h3>
+							<h3 class="footer-title">Danh mục</h3>
 							<ul class="footer-links">
-								<li><a href="#">Hot deals</a></li>
+								<li><a href="#">Khuyến mãi</a></li>
 								<li><a href="#">Laptops</a></li>
-								<li><a href="#">Smartphones</a></li>
-								<li><a href="#">Cameras</a></li>
-								<li><a href="#">Accessories</a></li>
+								<li><a href="#">Điện thoại</a></li>
+								<li><a href="#">Máy ảnh</a></li>
+								<li><a href="#">Phụ kiện</a></li>
 							</ul>
 						</div>
 					</div>
@@ -167,26 +167,26 @@
 
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">Information</h3>
+							<h3 class="footer-title">Thông tin</h3>
 							<ul class="footer-links">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Orders and Returns</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Về chúng tôi</a></li>
+								<li><a href="#">Liên hệ</a></li>
+								<li><a href="#">Chính sách bảo mật</a></li>
+								<li><a href="#">Đơn đặt hàng và trả hàng</a></li>
+								<li><a href="#">Điều khoản & Điều kiện</a></li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">Service</h3>
+							<h3 class="footer-title">Dịch vụ</h3>
 							<ul class="footer-links">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">View Cart</a></li>
-								<li><a href="#">Wishlist</a></li>
-								<li><a href="#">Track My Order</a></li>
-								<li><a href="#">Help</a></li>
+								<li><a href="#">Tài khoản của tôi</a></li>
+								<li><a href="#">Xem giỏ hàng</a></li>
+								<li><a href="#">Danh sách yêu thích</a></li>
+								<li><a href="#">Theo dõi đơn hàng của bạn</a></li>
+								<li><a href="#">Trợ giúp</a></li>
 							</ul>
 						</div>
 					</div>

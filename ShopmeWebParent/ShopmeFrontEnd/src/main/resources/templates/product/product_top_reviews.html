@@ -4,7 +4,7 @@
 <div th:fragment="content">
 	<div class="row"><div class="col"><hr/></div></div>
 	<div class="row m-1">
-		<h3 id="review">Customer Reviews</h3>
+		<h3 id="review">Khách hàng đánh giá</h3>
 	</div>		
 
 	<div class="row m-1">
@@ -14,18 +14,18 @@
 		<div class="col-xs ml-1 mt-3"><span id="ratingNumber">[[${product.averageRating}]]</span> of 5</div>
 	</div>
 	<div class="row m-1 ml-3">
-		<a th:href="@{'/ratings/' + ${product.alias}}">View all [[${product.reviewCount}]] ratings</a>
+		<a th:href="@{'/ratings/' + ${product.alias}}">Xem tất cả [[${product.reviewCount}]] đánh giá</a>
 	</div>
 	
 	<div th:if="${customerReviewed}" class="row m-1 ml-3">
-		<span class="text-success">You already reviewed this product.</span>
+		<span class="text-success">Bạn đã xem xét sản phẩm này.</span>
 	</div>
 	
 	<div th:if="${customerCanReview}" class="row m-1 ml-3">
 		<span class="text-info">
-			You purchased and got this product.
+			Bạn đã mua và nhận được sản phẩm này.
 			<b>
-				<a th:href="@{'/write_review/product/' + ${product.id}}">Write Your Review Now</a>
+				<a th:href="@{'/write_review/product/' + ${product.id}}">Viết đánh giá của bạn ngay bây giờ</a>
 			</b>
 		</span>
 	</div>

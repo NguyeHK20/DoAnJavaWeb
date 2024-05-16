@@ -22,11 +22,11 @@
 		<div><h4>[[${product.name}]]</h4></div>
 		
 		<div th:if="${customerReviewed}">
-			<span class="text-success">You already reviewed this product.</span>
+			<span class="text-success">Bạn đã đánh giá sản phẩm này.</span>
 		</div>
 		
 		<div th:if="${NoReviewPermission}">
-			<span class="text-danger">You can't review this product because you did not purchase it, or you have not received it.</span>
+			<span class="text-danger">Bạn không thể đánh giá sản phẩm này vì bạn không mua hoặc bạn chưa nhận được sản phẩm.</span>
 		</div>		
 	</div>
 	
@@ -46,7 +46,7 @@
  					placeholder="Comment Details"></textarea>
  			</p>
  			<p>
- 				<input type="submit" value="Post this Review" class="btn btn-primary" />
+ 				<input type="submit" value="Đăng bài đánh giá này" class="btn btn-primary" />
  			</p>
 		</div>	
 		

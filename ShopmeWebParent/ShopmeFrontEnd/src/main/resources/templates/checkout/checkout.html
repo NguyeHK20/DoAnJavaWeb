@@ -9,37 +9,37 @@
 		<!-- container -->
 		<div class="container">
 			<div class="text-center">
-				<h2>Checkout</h2>
+				<h2>Giỏ hàng của bạn</h2>
 			</div>
 			
 			<div class="row m-1">
 				<div class="col-sm-8">
 					<div class="card">
-						<div class="card-header"><h5>Shipping information</h5></div>
+						<div class="card-header"><h5>Thông tin vận chuyển</h5></div>
 						<div class="card-body">
 							<p>
-								<b>Ship to:</b>&nbsp; [[${shippingAddress}]]
-								<a th:href="@{/address_book(redirect=checkout)}">[Ship to another address]</a>
+								<b>Vận chuyển đến:</b>&nbsp; [[${shippingAddress}]]
+								<a th:href="@{/address_book(redirect=checkout)}"> [Vận chuyển đến địa chỉ khác]</a>
 							</p>
 							<p>
-								<b>Days to deliver: </b>[[${checkoutInfo.deliverDays}]] day(s)
+								<b>Ngày giao hàng: </b>[[${checkoutInfo.deliverDays}]] ngày
 							</p>
 							<p>
-								<b>Expected deliver date: </b>[[${#dates.format(checkoutInfo.deliverDate, 'E, dd MMM yyyy')}]]
+								<b>Ngày giao hàng dự kiến: </b>[[${#dates.format(checkoutInfo.deliverDate, 'E, dd MMM yyyy')}]]
 							</p>
 						</div>
 					</div>		
 					
 					<div class="card mt-3 mb-3">
-						<div class="card-header"><h5>Payment Method</h5></div>
+						<div class="card-header"><h5>Phương thức thanh toán</h5></div>
 						<div class="card-body">
 							<div th:if="${checkoutInfo.codSupported}">
 								<form th:action="@{/place_order}" method="post">
 								<p>
 								
-									<input type="radio" name="paymentMethod" id="radioCOD" value="COD" /> Cash on Delivery (COD)
+									<input type="radio" name="paymentMethod" id="radioCOD" value="COD" /> Tiền mặt khi giao hàng (COD)
 									&nbsp;
-									<button class="btn btn-primary d-none" type="submit" id="buttonSubmit">Place Order with COD</button>
+									<button class="btn btn-primary d-none" type="submit" id="buttonSubmit">Đặt hàng với COD</button>
 								</p>
 								</form>
 							</div>
@@ -55,7 +55,7 @@
 				
 				<div class="col-sm-4">
 					<div class="card">
-						<div class="card-header"><h5>Order Summary</h5></div>
+						<div class="card-header"><h5>Tóm tắt đơn hàng</h5></div>
 						<div class="card-body">
 							<div>
 							<table>
@@ -79,17 +79,17 @@
 							</div>
 							
 							<div class="row mt-2">
-								<div class="col">Product Total: </div>
+								<div class="col">Tổng sản phẩm: </div>
 								<div class="col"><div th:replace="fragments :: format_currency(${checkoutInfo.productTotal})"></div></div>
 							</div>
 							
 							<div class="row mt-2">
-								<div class="col">Shipping Total: </div>
+								<div class="col">Tổng phí vận chuyển: </div>
 								<div class="col"><div th:replace="fragments :: format_currency(${checkoutInfo.shippingCostTotal})"></div></div>
 							</div>
 									
 							<div class="row mt-2">
-								<div class="col">Payment Total: </div>
+								<div class="col">Tổng số tiền thanh toán: </div>
 								<div class="col"><b><div th:replace="fragments :: format_currency(${checkoutInfo.paymentTotal})"></div></b></div>
 							</div>										
 						</div>
@@ -181,7 +181,7 @@
 		
 		onError: function(err) {
 			// error that prevents buyer from doing checkout
-			showErrorModal("Something wrong with your address information, so payment will not work.");
+			showErrorModal("Có điều gì đó không ổn với thông tin địa chỉ của bạn, vì vậy thanh toán sẽ không hoạt động.");
 		}
 	}).render("#paypal-button-container");
 	
